@@ -1,7 +1,6 @@
 package com.dml.puke.wanfa.dianshu.dianshuzu.comparator;
 
 import com.dml.puke.wanfa.dianshu.dianshuzu.DanGeDianShuZu;
-import com.dml.puke.wanfa.dianshu.dianshuzu.ZhadanDianShuZu;
 
 /**
  * 最常见的上游牌点数牌组比大小，不管炸弹
@@ -13,9 +12,6 @@ public class NoZhadanDanGeDianShuZuComparator implements DanGeDianShuZuComparato
 
 	@Override
 	public int compare(DanGeDianShuZu dianShuZu1, DanGeDianShuZu dianShuZu2) throws CanNotCompareException {
-		if (dianShuZu1 instanceof ZhadanDianShuZu || dianShuZu2 instanceof ZhadanDianShuZu) {
-			throw new CanNotCompareException();
-		}
 		if (!dianShuZu1.getClass().equals(dianShuZu2.getClass())) {
 			throw new CanNotCompareException();
 		}

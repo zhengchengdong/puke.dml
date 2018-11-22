@@ -112,13 +112,13 @@ public class DianShuZuGenerator {
 		return shunziList;
 	}
 
-	public static List<ZhadanDianShuZu> generateAllZhadanDianShuZu(int[] dianShuAmountArray) {
-		List<ZhadanDianShuZu> zhadanList = new ArrayList<>();
+	public static List<DanGeZhadanDianShuZu> generateAllZhadanDianShuZu(int[] dianShuAmountArray) {
+		List<DanGeZhadanDianShuZu> zhadanList = new ArrayList<>();
 		for (int i = 0; i < dianShuAmountArray.length; i++) {
 			int dianshuCount = dianShuAmountArray[i];
 			if (dianshuCount >= 4) {
 				for (int j = 4; j < dianshuCount; j++) {
-					ZhadanDianShuZu zhadanDianShuZu = new ZhadanDianShuZu(DianShu.getDianShuByOrdinal(i), j);
+					DanGeZhadanDianShuZu zhadanDianShuZu = new DanGeZhadanDianShuZu(DianShu.getDianShuByOrdinal(i), j);
 					zhadanList.add(zhadanDianShuZu);
 				}
 			}
