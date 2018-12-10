@@ -47,8 +47,8 @@ public class DianShuZuGenerator {
 				j++;
 			}
 			if (danzhangLianXuCount >= length) {
-				DianShu[] lianXuDianShuArray = new DianShu[danzhangLianXuCount];
-				for (int k = 0; k < danzhangLianXuCount; k++) {
+				DianShu[] lianXuDianShuArray = new DianShu[length];
+				for (int k = 0; k < length; k++) {
 					lianXuDianShuArray[k] = DianShu.getDianShuByOrdinal(i + k);
 				}
 				LianduiDianShuZu liandui = new LianduiDianShuZu(lianXuDianShuArray);
@@ -68,8 +68,8 @@ public class DianShuZuGenerator {
 				j++;
 			}
 			if (danzhangLianXuCount >= length) {
-				DianShu[] lianXuDianShuArray = new DianShu[danzhangLianXuCount];
-				for (int k = 0; k < danzhangLianXuCount; k++) {
+				DianShu[] lianXuDianShuArray = new DianShu[length];
+				for (int k = 0; k < length; k++) {
 					lianXuDianShuArray[k] = DianShu.getDianShuByOrdinal(i + k);
 				}
 				LiansanzhangDianShuZu lianSanZhang = new LiansanzhangDianShuZu(lianXuDianShuArray);
@@ -101,8 +101,8 @@ public class DianShuZuGenerator {
 				j++;
 			}
 			if (danzhangLianXuCount >= length) {
-				DianShu[] lianXuDianShuArray = new DianShu[danzhangLianXuCount];
-				for (int k = 0; k < danzhangLianXuCount; k++) {
+				DianShu[] lianXuDianShuArray = new DianShu[length];
+				for (int k = 0; k < length; k++) {
 					lianXuDianShuArray[k] = DianShu.getDianShuByOrdinal(i + k);
 				}
 				ShunziDianShuZu shunzi = new ShunziDianShuZu(lianXuDianShuArray);
