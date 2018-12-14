@@ -1,5 +1,7 @@
 package com.dml.puke.wanfa.dianshu.dianshuzu;
 
+import java.util.Arrays;
+
 import com.dml.puke.pai.DianShu;
 
 /**
@@ -29,6 +31,20 @@ public abstract class LianXuDianShuZu implements DianShuZu {
 
 	public void setLianXuDianShuArray(DianShu[] lianXuDianShuArray) {
 		this.lianXuDianShuArray = lianXuDianShuArray;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		LianXuDianShuZu other = (LianXuDianShuZu) obj;
+		if (!Arrays.equals(lianXuDianShuArray, other.lianXuDianShuArray))
+			return false;
+		return true;
 	}
 
 }
