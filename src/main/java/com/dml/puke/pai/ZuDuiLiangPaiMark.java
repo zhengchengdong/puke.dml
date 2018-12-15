@@ -9,6 +9,7 @@ package com.dml.puke.pai;
 public class ZuDuiLiangPaiMark implements PukePaiMark {
 	private String name = "zuduiLiangPai";
 
+	@Override
 	public String name() {
 		return name;
 	}
@@ -20,4 +21,5 @@ public class ZuDuiLiangPaiMark implements PukePaiMark {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 }

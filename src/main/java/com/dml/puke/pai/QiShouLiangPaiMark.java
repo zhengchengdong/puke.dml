@@ -9,6 +9,7 @@ package com.dml.puke.pai;
 public class QiShouLiangPaiMark implements PukePaiMark {
 	private String name = "qishouLiangPai";
 
+	@Override
 	public String name() {
 		return name;
 	}
