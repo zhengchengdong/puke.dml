@@ -8,4 +8,6 @@ package com.dml.puke.pai;
  */
 public interface PukePaiMark {
 
+	String name();
+
 }
