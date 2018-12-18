@@ -34,6 +34,12 @@ public abstract class LianXuDianShuZu implements DianShuZu {
 	}
 
 	@Override
+	public int hashCode() {
+		int result = 1;
+		return result;
+	}
+
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -46,5 +52,4 @@ public abstract class LianXuDianShuZu implements DianShuZu {
 			return false;
 		return true;
 	}
-
 }

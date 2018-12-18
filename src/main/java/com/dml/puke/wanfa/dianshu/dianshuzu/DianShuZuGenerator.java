@@ -37,6 +37,39 @@ public class DianShuZuGenerator {
 		return duiziList;
 	}
 
+	public static List<SanzhangDianShuZu> generateAllSanzhangDianShuZu(int[] dianShuAmountArray) {
+		List<SanzhangDianShuZu> sanzhangList = new ArrayList<>();
+		for (int i = 0; i < dianShuAmountArray.length; i++) {
+			int dianshuCount = dianShuAmountArray[i];
+			if (dianshuCount >= 3) {
+				SanzhangDianShuZu sanzhangDianShuZu = new SanzhangDianShuZu(DianShu.getDianShuByOrdinal(i));
+				sanzhangList.add(sanzhangDianShuZu);
+			}
+		}
+		return sanzhangList;
+	}
+
+	public static List<ShunziDianShuZu> generateAllShunziDianShuZu(int[] dianShuAmountArray, int length) {
+		List<ShunziDianShuZu> shunziList = new ArrayList<>();
+		for (int i = 0; i < dianShuAmountArray.length; i++) {
+			int danzhangLianXuCount = 0;
+			int j = i;
+			while (j < 12 && dianShuAmountArray[j] >= 1) {// 任意5张或者5张以上点数相连的牌，3起最小，到A最大；无2和大、小王
+				danzhangLianXuCount++;
+				j++;
+			}
+			if (danzhangLianXuCount >= length) {
+				DianShu[] lianXuDianShuArray = new DianShu[length];
+				for (int k = 0; k < length; k++) {
+					lianXuDianShuArray[k] = DianShu.getDianShuByOrdinal(i + k);
+				}
+				ShunziDianShuZu shunzi = new ShunziDianShuZu(lianXuDianShuArray);
+				shunziList.add(shunzi);
+			}
+		}
+		return shunziList;
+	}
+
 	public static List<LianduiDianShuZu> generateAllLianduiDianShuZu(int[] dianShuAmountArray, int length) {
 		List<LianduiDianShuZu> lianduiList = new ArrayList<>();
 		for (int i = 0; i < dianShuAmountArray.length; i++) {
@@ -77,39 +110,6 @@ public class DianShuZuGenerator {
 			}
 		}
 		return lianSanZhangList;
-	}
-
-	public static List<SanzhangDianShuZu> generateAllSanzhangDianShuZu(int[] dianShuAmountArray) {
-		List<SanzhangDianShuZu> sanzhangList = new ArrayList<>();
-		for (int i = 0; i < dianShuAmountArray.length; i++) {
-			int dianshuCount = dianShuAmountArray[i];
-			if (dianshuCount >= 3) {
-				SanzhangDianShuZu sanzhangDianShuZu = new SanzhangDianShuZu(DianShu.getDianShuByOrdinal(i));
-				sanzhangList.add(sanzhangDianShuZu);
-			}
-		}
-		return sanzhangList;
-	}
-
-	public static List<ShunziDianShuZu> generateAllShunziDianShuZu(int[] dianShuAmountArray, int length) {
-		List<ShunziDianShuZu> shunziList = new ArrayList<>();
-		for (int i = 0; i < dianShuAmountArray.length; i++) {
-			int danzhangLianXuCount = 0;
-			int j = i;
-			while (j < 12 && dianShuAmountArray[j] >= 1) {// 任意5张或者5张以上点数相连的牌，3起最小，到A最大；无2和大、小王
-				danzhangLianXuCount++;
-				j++;
-			}
-			if (danzhangLianXuCount >= length) {
-				DianShu[] lianXuDianShuArray = new DianShu[length];
-				for (int k = 0; k < length; k++) {
-					lianXuDianShuArray[k] = DianShu.getDianShuByOrdinal(i + k);
-				}
-				ShunziDianShuZu shunzi = new ShunziDianShuZu(lianXuDianShuArray);
-				shunziList.add(shunzi);
-			}
-		}
-		return shunziList;
 	}
 
 	public static List<DanGeZhadanDianShuZu> generateAllZhadanDianShuZu(int[] dianShuAmountArray) {
