@@ -29,8 +29,7 @@ public abstract class DanGeDianShuZu implements DianShuZu {
 
 	@Override
 	public int hashCode() {
-		int result = 1;
-		return result;
+		return dianShu.hashCode();
 	}
 
 	@Override

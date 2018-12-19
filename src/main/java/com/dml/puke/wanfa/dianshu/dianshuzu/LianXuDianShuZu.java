@@ -35,8 +35,7 @@ public abstract class LianXuDianShuZu implements DianShuZu {
 
 	@Override
 	public int hashCode() {
-		int result = 1;
-		return result;
+		return Arrays.hashCode(lianXuDianShuArray);
 	}
 
 	@Override

@@ -38,8 +38,7 @@ public class DanGeZhadanDianShuZu extends ZhadanDianShuZu {
 
 	@Override
 	public int hashCode() {
-		int result = 1;
-		return result;
+		return dianShu.hashCode() + size;
 	}
 
 	@Override
