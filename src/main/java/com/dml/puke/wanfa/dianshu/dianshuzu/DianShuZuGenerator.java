@@ -54,7 +54,7 @@ public class DianShuZuGenerator {
 		for (int i = 0; i < dianShuAmountArray.length; i++) {
 			int danzhangLianXuCount = 0;
 			int j = i;
-			while (j < 12 && dianShuAmountArray[j] >= 1) {// 任意5张或者5张以上点数相连的牌，3起最小，到A最大；无2和大、小王
+			while (danzhangLianXuCount < length && j < 12 && dianShuAmountArray[j] >= 1) {// 任意5张或者5张以上点数相连的牌，3起最小，到A最大；无2和大、小王
 				danzhangLianXuCount++;
 				j++;
 			}
@@ -75,7 +75,7 @@ public class DianShuZuGenerator {
 		for (int i = 0; i < dianShuAmountArray.length; i++) {
 			int danzhangLianXuCount = 0;
 			int j = i;
-			while (j < 12 && dianShuAmountArray[j] >= 2) {// 3对或者以上的点数相连的牌，如556677；2和大、小王无法参与
+			while (danzhangLianXuCount < length && j < 12 && dianShuAmountArray[j] >= 2) {// 3对或者以上的点数相连的牌，如556677；2和大、小王无法参与
 				danzhangLianXuCount++;
 				j++;
 			}
@@ -96,7 +96,7 @@ public class DianShuZuGenerator {
 		for (int i = 0; i < dianShuAmountArray.length; i++) {
 			int danzhangLianXuCount = 0;
 			int j = i;
-			while (j < 12 && dianShuAmountArray[j] >= 3) {// 3个或者3个以上的点数相连的3张牌，如555666777；2和大、小王无法参与
+			while (danzhangLianXuCount < length && j < 12 && dianShuAmountArray[j] >= 3) {// 3个或者3个以上的点数相连的3张牌，如555666777；2和大、小王无法参与
 				danzhangLianXuCount++;
 				j++;
 			}
